@@ -2,7 +2,7 @@
 https://imersao.fullcycle.com.br/
 
 
-#Tecnologias utilizadas
+# Tecnologias utilizadas
 
 * Simulador: GOlang 
 * Backend: Nest.js & MongoDB
@@ -10,3 +10,4 @@ https://imersao.fullcycle.com.br/
 * Kafka & Kafca Connect 
 * Elasticsearch & Kibana 
 * Docker e Kubernetes 
+* Istio, KIali, Prometheus & Grafana
