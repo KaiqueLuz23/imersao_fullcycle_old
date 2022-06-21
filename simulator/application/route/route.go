@@ -10,14 +10,14 @@ import (
 )
 
 type Route struct {
-	ID string 
-	ClientID string
-	Positions []Positions
+	ID string 				'json:"routeId"'
+	ClientID string			'json: "clientId"'
+	Positions []Positions	'json:"position'
 }
 
 type Positions struct {
-	Lat float64
-	Long float64
+	Lat float64				'json:"Lat"'
+	Long float64			'json:"Long"'
 }
 
 
@@ -68,7 +68,7 @@ type PartialRoutePosition struct{
 func (r *Route) LoadPositions() error{}
 
 // Gerando Json
-func (r * Route) ExportJsonPositions() ([]string, error){
+func (r * Route) cc() ([]string, error){
 
 	var route PartialRoutePosition
 	var result []string
