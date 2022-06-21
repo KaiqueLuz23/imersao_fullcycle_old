@@ -57,4 +57,41 @@ func (r *Route) LoadPositions() error {
 	return nil
 }
 
+// POsição Parcial
+type PartialRoutePosition struct{
+	ID string 			'json:"RouteId"'
+	ClientID string 	'json:"clientId"'
+	Position []float64 	'json:"position"'
+	Finished bool 		'json:"finished"'	// FInished = True = Viagem finalizada
+}
+
+func (r *Route) LoadPositions() error{}
+
+// Gerando Json
+func (r * Route) ExportJsonPositions() ([]string, error){
+
+	var route PartialRoutePosition
+	var result []string
+	total := len(r.Positions)
+
+	for k, v := range r.Positions{
+		route.ID = r.ID
+		route.ClientID = r.ClientID
+		route.Position = []float64{v.Lat, v.Long}
+		route.FInished = false
+		if total-1 ==k {
+			route.FInished = true
+		}
+		jsonRoute, err := json.Marshal(route) 		//slice de bite
+
+		if err != nil {
+			return nil, err
+		}
+		result = append(result, string(jsonRoute))  //slice de string
+	}	
+	return result, nil
+
+	
+}
+
 
