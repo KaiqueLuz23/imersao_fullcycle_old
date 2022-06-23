@@ -1,13 +1,13 @@
 package main
 
 import (
-	log
+	"log"
 )
 
 func init() {
 	err = godotenv.Load()
 	if err != nil {
-		log.Fatal(Error loading .env file)
+		log.Fatal("Error loading .env file")
 	}
 }
 
@@ -16,8 +16,8 @@ func main() {
 	kafka.Publish(msgOla, topicreadteste, producer)
 
 	route = route2.Route{
-		ID       1,
-		ClientID 1,
+		ID       '1',
+		ClientID '1',
 	}
 
 	route.LoadPositions()
